@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Advisory | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10192f; /* Deep Navy */
+            --accent: #3daaea;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header - Consistent Black Theme */
+        .header {
+            background: var(--primary);
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .site-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            text-wrap-style: auto;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .nav-area {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 5% 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container - Optimized for better grid visibility */
+        .container {
+            max-width: 1400px; /* Slightly wider to accommodate more cards per row */
+            margin: -50px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced min-width to fit more per row */
+            gap: 25px;
+        }
+
+        .option-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform .2s ease, box-shadow .2s ease;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15);
+            border-color: var(--accent);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            height: 180px; /* Reduced height for a more balanced look */
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .option-card:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 25px; /* Reduced padding for compact size */
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #eff6ff;
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .action-btn {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Info Section */
+        .info-strip {
+            background: #fff;
+            padding: 50px 5%;
+            text-align: center;
+            margin-bottom: 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* Footer */
+        .footer-bottom {
+            background: #020617;
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 32px; }
+            .nav-area { display: none; }
+            .vehicle-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+        </a>
+        <nav class="nav-area">
+            <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Vehicle Solutions</h1>
+        <p>Strategic advisory for premium Cars and heavy-duty Machinery.</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="vehicle-grid">
+            
+            <!-- Tractor Option -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://www.deere.co.in/assets/images/region-1/products/tractors/d-series-tractors/john-deere-india-d-series-tractors.jpg" alt="Tractor" class="card-img" onerror="this.src='https://via.placeholder.com/800x600/0f172a/ffffff?text=Tractors'">
+                    <div class="card-badge">AGRICULTURE</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🚜</div>
+                    <h3>Tractors</h3>
+                    <p>Heavy-duty agriculture machinery aur tractors ke liye procurement advisory.</p>
+                    <a href="Tractar_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+
+            <!-- Harvestors -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://jooinn.com/images/harvester-combine-5.jpg" alt="Harvestor" class="card-img" onerror="this.src='https://via.placeholder.com/800x600/0f172a/ffffff?text=Harvestors'">
+                    <div class="card-badge">Harvesting</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🌾</div>
+                    <h3>Harvestors</h3>
+                    <p>Combine harvestors aur advanced harvesting equipment expert consulting.</p>
+                    <a href="Harvestor_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+            
+            <!-- Truck -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Truck" class="card-img">
+                    <div class="card-badge">Logistics</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🚛</div>
+                    <h3>Commercial Trucks</h3>
+                    <p>Heavy-duty transport aur logistics fleet management solutions.</p>
+                    <a href="Truck_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+
+            <!-- JCB -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://assets.tractorjunction.com/infra-junction/vehicle/backhoe-loader/jcb/jcb-3dx-backhoe-loader1686911730.jpg" alt="JCB" class="card-img" onerror="this.src='https://via.placeholder.com/800x600/0f172a/ffffff?text=JCB'">
+                    <div class="card-badge">Earthmovers</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🏗️</div>
+                    <h3>JCB & Excavators</h3>
+                    <p>Industrial earthmoving aur excavation machinery advisory.</p>
+                    <a href="JCB_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+
+            <!-- Building Machine -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://www.ny-engineers.com/hs-fs/hubfs/towercranewithload.jpg?width=1821&name=towercranewithload.jpg" alt="Construction" class="card-img" onerror="this.src='https://via.placeholder.com/800x600/0f172a/ffffff?text=Construction'">
+                    <div class="card-badge">Construction</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🏢</div>
+                    <h3>Building Machines</h3>
+                    <p>High-scale construction equipment aur technical machinery management.</p>
+                    <a href="Building_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+
+            <!-- Heavy Equipment -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://png.pngtree.com/background/20230426/original/pngtree-heavy-equipment-in-ground-for-excavation-of-construction-site-picture-image_2491588.jpg" alt="Heavy Equipment" class="card-img" onerror="this.src='https://via.placeholder.com/800x600/0f172a/ffffff?text=Heavy+Equipment'">
+                    <div class="card-badge">Infrastructure</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Heavy Equipment</h3>
+                    <p>Large infrastructure projects industrial-grade machinery advisory.</p>
+                    <a href="Heavy_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+
+            <!-- BUS -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=800" alt="Bus" class="card-img">
+                    <div class="card-badge">Public Transit</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🚌</div>
+                    <h3>Bus Fleet</h3>
+                    <p>Corporate transit aur public transport fleet optimized solutions.</p>
+                    <a href="Bus_form.html" class="action-btn">Enquiry Karein →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Section -->
+    <div class="info-strip">
+        <h2>Mobility Excellence</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Sahi technology aur management ke saath vehicles ki life aur efficiency dono badhai ja sakti hai.</p>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Chandraneel Associates. Mobility Advisory. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

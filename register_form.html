@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0; 
+        }
+
+        .register-container {
+            background: var(--white);
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        /* Left Side: Branding */
+        .register-sidebar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-sidebar::before {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .sidebar-logo {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            text-wrap-style: auto;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .sidebar-logo svg {
+            color: var(--accent);
+        }
+
+        .register-sidebar h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .register-sidebar p {
+            font-size: 18px;
+            opacity: 0.8;
+            line-height: 1.8;
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Right Side: Form */
+        .register-form-area {
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--white);
+            overflow-y: auto;
+        }
+
+        .form-content-wrapper {
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .terms-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .terms-box input {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .terms-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            margin-bottom: 25px;
+        }
+
+        .register-btn:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+        }
+
+        .divider {
+            text-align: center;
+            position: relative;
+            margin-bottom: 25px;
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+
+        .social-login {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--bg-light);
+        }
+
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .login-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 950px) {
+            .register-container {
+                grid-template-columns: 1fr;
+            }
+            .register-sidebar {
+                padding: 60px 40px;
+                min-height: auto;
+            }
+            .register-sidebar h2 { font-size: 32px; }
+            .register-form-area {
+                padding: 40px 30px;
+            }
+            .input-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <!-- Sidebar Branding -->
+        <div class="register-sidebar">
+            <div class="sidebar-logo">
+                <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+                CHANDRANEEL ASSOCIATES
+
+            </div>
+            <h2>Join the Elite Network.</h2>
+            <p>Create an account to begin your journey with global strategic insights and bespoke advisory management.</p>
+        </div>
+
+        <!-- Register Form Area -->
+        <div class="register-form-area">
+            <div class="form-content-wrapper">
+                <div class="form-header">
+                    <h3>Create Account</h3>
+                    <p>Enter your details to get started with us.</p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('Registration process started.');">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" placeholder="John" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Business Email</label>
+                        <input type="email" id="email" placeholder="john.doe@corporate.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest">
+                            <option value="property">Property Advisory</option>
+                            <option value="stocks">Capital Markets</option>
+                            <option value="solar">Renewable Energy</option>
+                            <option value="other">General Consulting</option>
+                        </select>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cpassword">Confirm</label>
+                            <input type="password" id="cpassword" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <label class="terms-box">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> of Chandraneel Associates.</span>
+                    </label>
+
+                    <button type="submit" class="register-btn">Create Elite Account</button>
+
+                    <div class="divider">Or register with</div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn">
+                            <img src="https://www.google.com/favicon.ico" width="16" alt="Google"> Google
+                        </button>
+                        <button type="button" class="social-btn">
+                            <img src="https://www.apple.com/favicon.ico" width="16" alt="Apple"> Apple
+                        </button>
+                    </div>
+
+                    <div class="login-link">
+                        Already have an account? <a href="login.html">Sign In</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>

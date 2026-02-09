@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Advisory | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #3b82f6;  /* Royal Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header (Matching your Black Header requirement) */
+        .header {
+            background: #000000;
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .site-logo{
+          width: 140px;
+          height: 140px;
+          object-fit: contain;
+          text-wrap-style: auto;
+          border-radius: 50%;
+          align-items: center;
+        }
+        
+        .nav-area {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-area a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+
+        .nav-area a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 5% 120px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Service Cards Container */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .option-card {
+            background: var(--white);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .option-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px rgba(15, 23, 42, 0.15);
+            border-color: var(--accent);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .option-card:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            backdrop-filter: blur(5px);
+        }
+
+        .card-content {
+            padding: 40px 30px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--accent-soft, #eff6ff);
+            color: var(--accent);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .action-btn {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+            gap: 15px;
+        }
+
+        /* Info Section */
+        .info-strip {
+            background: #fff;
+            padding: 60px 5%;
+            text-align: center;
+            margin-bottom: 80px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-strip h2 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer (Consistent with Dashboard) */
+        .footer-bottom {
+            background: #020617;
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 34px; }
+            .nav-area { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+        </a>
+        <nav class="nav-area">
+            <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Property Advisory</h1>
+        <p>Expertly curated real estate solutions for acquisition, divestment, and high-yield leasing across the globe.</p>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="property-grid">
+            
+            <!-- Buy Option -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Buy Property" class="card-img">
+                    <div class="card-badge">INVESTMENT</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🔑</div>
+                    <h3>Buy Property</h3>
+                    <p>Access exclusive off-market listings and premium residential assets with full legal due diligence support.</p>
+                    <a href="buy_form.html" class="action-btn">Browse Portfolio →</a>
+                </div>
+            </div>
+
+            <!-- Sell Option -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="Sell Property" class="card-img">
+                    <div class="card-badge">DIVESTMENT</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">💰</div>
+                    <h3>Sell Property</h3>
+                    <p>Leverage our global network of HNI buyers and data-driven valuation strategies to exit at the right price.</p>
+                    <a href="sell_form.html" class="action-btn">List My Asset →</a>
+                </div>
+            </div>
+
+            <!-- Rent Option -->
+            <div class="option-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800" alt="Rent Property" class="card-img">
+                    <div class="card-badge">LEASING</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">🏠</div>
+                    <h3>Rent / Lease</h3>
+                    <p>From luxury residential stays to prime commercial leasing, we manage the entire lifecycle of your rental needs.</p>
+                    <a href="rent_form.html" class="action-btn">Find Spaces →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Additional Trust Section -->
+    <div class="info-strip">
+        <h2>Confidential & Strategic</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Har transaction ko hum poori privacy aur strategic planning ke saath handle karte hain taaki aapko best returns mil sakein.</p>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Chandraneel Associates. Crafted for Excellence. All Rights Reserved.</p>
+    </footer>
+        <script src="script.js"></script>
+</body>
+</html>

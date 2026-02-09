@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #3b82f6;  /* Royal Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        .header {
+            background: #000000;
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .site-logo{
+          width: 140px;
+          height: 140px;
+          object-fit: contain;
+          text-wrap-style: auto;
+          border-radius: 50%;
+          align-items: center;
+        }
+        
+        .nav-area {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Back Button Styling */
+        .back-btn {
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: var(--primary);
+            color: white;
+            padding: 100px 5% 140px;
+            text-align: center;
+            position: relative;
+            background-image: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1), transparent);
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        /* Content Area */
+        .container {
+            max-width: 850px;
+            margin: -70px auto 100px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-card {
+            background: var(--white);
+            padding: 70px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.05);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .content-card p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            background: #020617;
+            padding: 40px 5%;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .content-card { padding: 40px 25px; }
+            .about-hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+           <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+
+        </a>
+        <nav class="nav-area">
+            <!-- Only Back Button on the Right -->
+            <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <h1>About Chandraneel Associates</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-card">
+            <p>
+                Chandraneel Associates is a multi-service consulting firm committed to simplifying the way individuals and businesses manage their valuable assets and investments. We specialize in providing reliable guidance across Property Consulting, Vehicle Solutions, Stock Market Advisory, and Solar Energy Services, all under one integrated platform.
+            </p>
+
+            <p>
+                Founded with the vision to bridge the gap between complex financial decisions and everyday people, we focus on transparency, trust, and long-term value creation. Our expert-driven approach ensures that every client receives personalized support tailored to their goals and financial capacity.
+            </p>
+
+            <p>
+                At Chandraneel Associates, we believe that informed decisions lead to sustainable success. Whether you are planning to invest in real estate, manage your vehicle portfolio, grow wealth through stock markets, or adopt renewable solar solutions, our consultants walk with you at every step of the journey.
+            </p>
+
+            <p>
+                Our mission is not just to offer services, but to build enduring relationships that empower clients to secure a smarter, more confident future.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Chandraneel Associates. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

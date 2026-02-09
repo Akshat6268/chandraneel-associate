@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Solar Inquiry | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #3b82f6;  /* Royal Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --solar-yellow: #facc15;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header - Consistent Black Theme */
+        .header {
+            background: #000000;
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .site-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            text-wrap-style: auto;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Inquiry Form Container */
+        .form-container {
+            max-width: 850px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            background: #fcfdfe;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .request-call-btn {
+            grid-column: 1 / -1;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .request-call-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Footer */
+        .footer-bottom {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container { padding: 40px 25px; margin: 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-header h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+
+        </a>
+        <nav class="nav-area">
+            <a href="Solar.html" class="back-btn">← Back to Solar</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Industrial Solar Advisory</h1>
+            <p>Optimize your enterprise's energy costs with large-scale solar infrastructure. Provide business details for a technical feasibility study.</p>
+        </div>
+        
+        <form class="form-grid" onsubmit="event.preventDefault(); alert('Your Industrial Solar request has been received. Our senior project engineers will contact you for a technical site audit.'); window.location.href='solar.html';">
+            <div class="form-group">
+                <label>Company / Factory Name</label>
+                <input type="text" placeholder="e.g. Acme Manufacturing Ltd." required>
+            </div>
+
+            <div class="form-group">
+                <label>Business GST Number</label>
+                <input type="text" placeholder="22AAAAA0000A1Z5">
+            </div>
+            
+            <div class="form-group">
+                <label>Contact Person & Designation</label>
+                <input type="text" placeholder="e.g. John Doe (Plant Manager)" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Corporate Email Address</label>
+                <input type="email" placeholder="manager@company.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Sanctioned Load (kW/kVA)</label>
+                <input type="number" placeholder="e.g. 500" required>
+            </div>
+
+            <div class="form-group">
+                <label>Average Monthly Electricity Bill (Rs.)</label>
+                <input type="number" placeholder="e.g. 2,00,000" required>
+            </div>
+
+            <div class="form-group">
+                <label>Available Installation Area (sq. ft.)</label>
+                <input type="number" placeholder="e.g. 20000" required>
+            </div>
+
+            <div class="form-group">
+                <label>Installation Type</label>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="rooftop">Industrial Rooftop</option>
+                    <option value="ground">Ground Mounted Solar Park</option>
+                    <option value="shed">Open Parking / Shed Mounted</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Primary Industry Sector</label>
+                <select required>
+                    <option value="">Select Sector</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="textile">Textiles & Garments</option>
+                    <option value="pharma">Pharmaceuticals</option>
+                    <option value="cold-storage">Cold Storage & Logistics</option>
+                    <option value="other">Other Industrial</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Connection Type</label>
+                <select required>
+                    <option value="ht">HT (High Tension)</option>
+                    <option value="lt">LT (Low Tension)</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Project Scope & Requirements</label>
+                <textarea rows="3" placeholder="Briefly describe your power requirements, shift timings, or specific sustainability goals..."></textarea>
+            </div>
+
+            <button type="submit" class="request-call-btn" style="background-color: var(--primary);">Request Industrial Audit</button>
+        </form>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Chandraneel Associates. Enterprise Renewable Energy Division. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

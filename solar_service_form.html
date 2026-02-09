@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service & Care Inquiry | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #3b82f6;  /* Royal Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --solar-yellow: #facc15;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header - Consistent Black Theme */
+        .header {
+            background: #000000;
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);  /* ← THIS LINE */
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .site-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            text-wrap-style: auto;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Inquiry Form Container */
+        .form-container {
+            max-width: 850px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            background: #fcfdfe;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .request-call-btn {
+            grid-column: 1 / -1;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .request-call-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Footer */
+        .footer-bottom {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container { padding: 40px 25px; margin: 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-header h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+        </a>
+        <nav class="nav-area">
+            <a href="Solar.html" class="back-btn">← Back to Solar</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Solar Service & Care</h1>
+            <p>Ensure peak performance of your solar infrastructure. Provide details for specialized maintenance, cleaning, or technical support.</p>
+        </div>
+        
+        <form class="form-grid" onsubmit="event.preventDefault(); alert('Your Service & Care request has been received. Our maintenance team will contact you to schedule a visit.'); window.location.href='solar.html';">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g. John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" placeholder="e.g. +91 98765 43210" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label>System Capacity (kW)</label>
+                <input type="number" placeholder="e.g. 10" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Service Type Required</label>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="cleaning">Professional Panel Cleaning</option>
+                    <option value="audit">Electrical & Performance Audit</option>
+                    <option value="repair">Component Repair / Replacement</option>
+                    <option value="amc">Annual Maintenance Contract (AMC)</option>
+                    <option value="inverter">Inverter Troubleshooting</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Installation Year</label>
+                <input type="number" placeholder="e.g. 2021" required>
+            </div>
+
+            <div class="form-group">
+                <label>Property Type</label>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="residential">Residential Home</option>
+                    <option value="commercial">Commercial Building</option>
+                    <option value="industrial">Industrial Plant</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Urgency Level</label>
+                <select required>
+                    <option value="routine">Routine Maintenance</option>
+                    <option value="low">Low Priority</option>
+                    <option value="high">High - Urgent Issue</option>
+                    <option value="emergency">Emergency Breakdown</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Description of Issue or Requirement</label>
+                <textarea rows="4" placeholder="Please describe any faults, specific cleaning requirements, or error codes displayed on your inverter..."></textarea>
+            </div>
+
+            <button type="submit" class="request-call-btn" style="background-color: var(--primary);">Request Maintenance Visit</button>
+        </form>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Chandraneel Associates. Solar Maintenance & Support. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

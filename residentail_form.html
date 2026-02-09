@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Installation Inquiry | Chandraneel Associates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a; /* Deep Navy */
+            --accent: #3b82f6;  /* Royal Blue */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --solar-yellow: #facc15;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header - Consistent Black Theme */
+        .header {
+            background: #000000;
+            padding: 0 5%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .site-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            text-wrap-style: auto;
+            border-radius: 50%;
+            align-items: center;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Inquiry Form Container */
+        .form-container {
+            max-width: 800px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            background: #fcfdfe;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .request-call-btn {
+            grid-column: 1 / -1;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .request-call-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Footer */
+        .footer-bottom {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .form-container { padding: 40px 25px; margin: 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-header h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="dashboard.html" class="logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" class="site-logo">
+            CHANDRANEEL ASSOCIATES
+
+        </a>
+        <nav class="nav-area">
+            <a href="Solar.html" class="back-btn">← Back to Solar</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Solar Installation Inquiry</h1>
+            <p>Go green with Residential Solar. Provide your details for a customized rooftop assessment.</p>
+        </div>
+        
+        <form class="form-grid" onsubmit="event.preventDefault(); alert('Your solar installation request has been received. Our engineers will contact you shortly for a site survey.'); window.location.href='solar.html';">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g. John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" placeholder="e.g. +91 98765 43210" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@home.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Average Monthly Bill (Rs.)</label>
+                <input type="number" placeholder="e.g. 3000" required>
+            </div>
+
+            <div class="form-group">
+                <label>Available Roof Area (sq. ft.)</label>
+                <input type="number" placeholder="e.g. 500" required>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred System Type</label>
+                <select required>
+                    <option value="">Select Type</option>
+                    <option value="on-grid">On-Grid (Connected to Power Grid)</option>
+                    <option value="off-grid">Off-Grid (Independent with Batteries)</option>
+                    <option value="hybrid">Hybrid (Grid + Battery Backup)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Current Connection Load (kW)</label>
+                <input type="number" placeholder="e.g. 5" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label>Property Type</label>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="individual">Individual House / Villa</option>
+                    <option value="apartment">Apartment / Penthouse</option>
+                    <option value="commercial">Commercial Space</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Additional Project Details</label>
+                <textarea rows="3" placeholder="e.g. Shadows from nearby buildings, preferred panel brand, or specific installation timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="request-call-btn" style="background-color: var(--primary);">Request a Site Survey</button>
+        </form>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>&copy; 2026 Chandraneel Associates. Renewable Energy Division. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
