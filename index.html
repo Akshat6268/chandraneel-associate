@@ -722,14 +722,16 @@
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            .nav-area.open a, .nav-area.open .profile-pic {
+            .nav-area.open a {
                 display: block;
                 margin: 0 auto;
-            }
-
-            .nav-area.open a {
                 font-size: 16px;
                 padding: 10px 0;
+            }
+
+            .nav-area.open .profile-pic {
+                display: flex;
+                margin: 20px auto 10px;
             }
 
             .nav-area.open .profile-pic::after { display: none; }
