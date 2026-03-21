@@ -390,12 +390,18 @@
 
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
+            body {
+                align-items: flex-start;
+            }
             .auth-container {
                 flex-direction: column;
+                height: auto;
+                min-height: 100vh;
             }
             .auth-sidebar {
-                padding: 50px 40px;
+                padding: 40px 20px;
                 text-align: center;
+                flex: none;
             }
             .logo-wrapper {
                 justify-content: center;
@@ -405,7 +411,8 @@
             .auth-sidebar p { margin: 0 auto; }
             
             .auth-form-area {
-                padding: 50px 30px;
+                padding: 40px 20px;
+                flex: none;
             }
             .auth-sidebar::before, .auth-sidebar::after {
                 display: none;
@@ -421,6 +428,12 @@
                 grid-template-columns: 1fr;
             }
             .auth-sidebar h2 { font-size: 30px; }
+            .auth-sidebar {
+                padding: 30px 15px;
+            }
+            .auth-form-area {
+                padding: 30px 15px;
+            }
         }
     </style>
 </head>
