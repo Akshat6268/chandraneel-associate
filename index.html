@@ -237,7 +237,7 @@
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('assets/images/banner.png') center/cover;
+            background: url('Team Photo Work and Collaboration Corporate Canva Banner.png') center/cover;
             filter: brightness(0.4) contrast(1.1);
             z-index: -2;
             animation: kenBurns 20s infinite alternate linear;
@@ -333,8 +333,8 @@
 
         .btn-services:hover {
             color: var(--primary);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-            transform: translateY(-3px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-3px);
         }
 
         .btn-services:hover::before {
@@ -413,17 +413,9 @@
             transition: var(--transition-smooth);
         }
 
-        .service-card {
-            perspective: 1200px;
-        }
         .service-card:hover {
-            transform: translateY(-12px) rotateX(3deg) rotateY(2deg);
-            box-shadow: 0 25px 50px rgba(10, 17, 40, 0.12);
-        }
-        .service-icon {
-            transform-style: preserve-3d;
-            backface-visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(10, 17, 40, 0.08);
         }
 
         .service-card:hover::before {
@@ -447,7 +439,7 @@
         .service-card:hover .service-icon {
             background: var(--primary);
             color: var(--accent);
-            transform: scale(1.1) rotateY(180deg) translateZ(20px);
+            transform: scale(1.1);
         }
 
         .service-card h3 {
@@ -520,19 +512,8 @@
             transition: var(--transition-smooth);
         }
 
-        .team-card {
-            perspective: 1000px;
-        }
-        .img-wrapper {
-            transform-style: preserve-3d;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            will-change: transform;
-        }
         .team-card:hover .img-wrapper {
-            transform: rotateY(10deg) rotateX(5deg) scale(1.05) translateZ(30px);
-        }
-        .team-img {
-            backface-visibility: hidden;
+            transform: rotate(5deg) scale(1.05);
         }
 
         .team-img {
@@ -769,7 +750,7 @@
     <!-- Header / Nav -->
     <header class="header" id="header">
         <a href="index.html" class="logo">
-            <img src="assets/images/logo.png" alt="Chandraneel Associates Logo" class="site-logo">
+            <img src="WhatsApp Image 2026-01-16 at 5.20.39 PM.png" alt="Chandraneel Associates Logo" class="site-logo">
             Chandraneel Associates
         </a>
 
@@ -778,7 +759,7 @@
             <a href="index.html">Home</a>
             <a href="#services">Services</a>
             <a href="#contact-us">Contact</a>
-            <div class="profile-pic" onclick="window.location.href='pages/login_pages.html'" title="Login / Profile">
+            <div class="profile-pic" onclick="window.location.href='login_pages.html'" title="Login / Profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
                 </svg>
@@ -809,28 +790,28 @@
                     <div class="service-icon">🏢</div>
                     <h3>Property Advisory</h3>
                     <p>Unlock the potential of your portfolio with our premium real estate acquisition, management, and strategic advisory services.</p>
-                    <a href="pages/property/Property.html" class="card-footer-btn">Explore Listings &rarr;</a>
+                    <a href="Property.html" class="card-footer-btn">Explore Listings &rarr;</a>
                 </div>
 
                 <div class="service-card reveal delay-2">
                     <div class="service-icon">⚡</div>
                     <h3>Solar Energy</h3>
                     <p>Pioneering sustainable infrastructure. We specialize in solar grid integration, energy audits, and green investments.</p>
-                    <a href="pages/solar/Solar.html" class="card-footer-btn">Sustainability Report &rarr;</a>
+                    <a href="Solar.html" class="card-footer-btn">Sustainability Report &rarr;</a>
                 </div>
 
                 <div class="service-card reveal delay-3">
                     <div class="service-icon">📊</div>
                     <h3>Market Intelligence</h3>
                     <p>Advanced stock market and mutual fund analysis providing deep insights for high-net-worth individual investments.</p>
-                    <a href="pages/capital/Capital.html" class="card-footer-btn">Get Advisory &rarr;</a>
+                    <a href="Capital.html" class="card-footer-btn">Get Advisory &rarr;</a>
                 </div>
 
                 <div class="service-card reveal delay-4">
                     <div class="service-icon">🏎️</div>
                     <h3>Vehicle Procurement</h3>
                     <p>Tailored luxury vehicle advisory and corporate fleet optimization to meet the highest standards of executive travel.</p>
-                    <a href="pages/vehicle/Vehicle.html" class="card-footer-btn">Connect Expert &rarr;</a>
+                    <a href="Vehicle.html" class="card-footer-btn">Connect Expert &rarr;</a>
                 </div>
             </div>
         </section>
@@ -899,10 +880,10 @@
         <div class="footer-col reveal delay-3">
             <h4>Quick Links</h4>
             <ul class="footer-links">
-                <li><a href="pages/about_us.html">&rarr; About Us</a></li>
+                <li><a href="about_us.html">&rarr; About Us</a></li>
                 <li><a href="#services">&rarr; Premium Services</a></li>
                 <li><a href="#">&rarr; Market Insights</a></li>
-                <li><a href="pages/login_pages.html">&rarr; Client Portal</a></li>
+                <li><a href="login_pages.html">&rarr; Client Portal</a></li>
             </ul>
         </div>
         
